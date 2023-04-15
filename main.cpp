@@ -8,7 +8,7 @@
 using namespace std;
 
 int main()
-{
+{/*
     Genome genome;
     Cell cell;
     cout << "welcome to the mid-term projct\n";
@@ -61,7 +61,7 @@ int main()
         cout << "Cell class\n";
         cout << "enter data\n";
         cell.save_chromosome_data();
-        cout << "type 1 to use cell_death, type 2 to use big_mutation, type 3 to use small_mutation, type 4 to use reverse_mutation and type 5 to use palindrome_finder\n";
+        cout << "type 1 to use cell_death, type 2 to use big_mutation, type 3 to use small_mutation, type 4 to use reverse_mutation and type 5 to use pallindrome_finder\n";
         int i;
         cin >> i;
         if(i == 1){
@@ -113,7 +113,12 @@ int main()
 
     }else if(a == 4){
 
-    }
+    }*/
+    Cell cell;
+    int t;
+    cin >> t;
+    cell.save_chromosome_data();
+    cell.pallindrome_finder(t);
 
     return 0;
 }

@@ -4,6 +4,14 @@
 
 using namespace std;
 
+void reversestr(string& str)
+{
+    int n = str.length();
+    for (int i = 0; i < n / 2; i++){
+        swap(str[i], str[n - i - 1]);
+    }
+}
+
 class Cell: public Genome{
 public:
     vector <Genome> chromosome_l;
@@ -144,38 +152,38 @@ public:
                         }
                     }
                 }
-                void palindrome_finder(int a){
-                    string s1, s2, s3, hold;
-                    int cnt = 0;
+                void pallindrome_finder(int a){
+                    string s1, s2, s3, s4, hold, hold2;
                     s1 = chromosome_l[a].dna[0];
                     s2 = chromosome_l[a].dna[1];
                     for(int i = 0; i < s1.length(); i++){
                         for(int j = i; j < s1.length(); j++){
-                            for(int k = i ;k < j; k++){
-                                hold += s1[k];
-                                //cout << endl << hold << endl << cnt;
-                                if(hold[k-i] == 'A'){
-                                    hold[k-i] = 'T';
+                                int cnt = 0;
+                                hold = s1.substr(i, j);
+                                hold2 = s1.substr(i, j);
+                            if(hold.length() > 2 && hold.length() % 2 == 0){
+                                for(int k = 0; k < hold.length(); k++){
+                                    if(hold[k] == 'A'){
+                                    hold[k] = 'T';
                                 }else if(hold[k] == 'C'){
-                                    hold[k-i] = 'G';
+                                    hold[k] = 'G';
                                 }
-                            }
-                            //cout << endl << hold;
-                                for(int l = 0; l < hold.length()/2; l++){
+                                }
+                                for(int l = 0; l < hold.length(); l++){
                                     if(hold[l] == hold[hold.length()-1-l]){
                                         continue;
-                                }else{
-                                    cnt++;
+                                    }else{
+                                        cnt++;
+                                    }
                                 }
-                                if(cnt = 0 && hold.length() > 1){
-                                    cout << endl << hold;
+                                if(cnt == 0){
+                                    cout << hold2 << endl;
                                 }
-                                cnt = 0;
-                                hold = "";
+                                }
                             }
                         }
                     }
-                }
+
 
 };
 
