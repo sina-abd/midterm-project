@@ -46,7 +46,7 @@ public:
         if(m > 0){
             cout << "invalid rna" << endl;
         }else{
-            cout << b;
+            cout << b << endl;
         }
     }
     string small_mutation(char a, char b, int n){

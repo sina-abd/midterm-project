@@ -9,10 +9,15 @@ public:
     vector <Genome> chromosome_l;
     void save_chromosome_data(){
         int a;
+        cout << "enter the number of chromosomes\n";
         cin >> a;
         for(int i = 0; i < a; i++){
             Genome chromosome;
-            cin >> chromosome.dna[0] >> chromosome.dna[1];
+            cout << "enter dna1(dna at index 0)\n";
+            cin >> chromosome.dna[0];
+            cout << "enter dna2(dna at index 1)\n";
+            cin >> chromosome.dna[1];
+            cout << endl;
             chromosome.rna = "";
             chromosome_l.push_back(chromosome);
         }
